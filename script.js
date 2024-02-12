@@ -107,4 +107,48 @@ class LinkedList {
     aNode.prev.next = aNode.next;
     aNode.next.prev = aNode.prev;
   }
+
+  insertBeforeNode() {
+    // to be completed
+  }
+
+  insertAfterNode() {
+    // to be completed
+  }
+
+  swapNodes() {
+    // to be completed
+  }
+
+  nodeAt() {
+    // to be completed
+  }
+
+  clear() {
+    // to be completed
+  }
+
+  get() {
+    // to be completed
+  }
+
+  indexOf() {
+    // to be completed
+  }
+
+  first() {
+    // to be completed
+  }
+
+  last() {
+    // to be completed
+  }
+
+  insetBefore() {
+    // to be completed
+  }
+
+  insertAfter() {
+    // to be completed
+  }
 }
