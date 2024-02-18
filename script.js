@@ -36,7 +36,7 @@ function start() {
   newList.dumpList();
 
   let payload = "H";
-  newList.insertBeforeNode(payload, node3);
+  newList.insertAfterNode(payload, node2);
 
   newList.dumpList();
 }
@@ -111,8 +111,7 @@ class LinkedList {
   }
 
   insertBeforeNode(payload, existingNode) {
-    // to be completed
-    console.log("insertBeforeNode");
+    console.log("insertBeforeNode()");
 
     let aNode = this.head;
 
@@ -128,8 +127,21 @@ class LinkedList {
     aNode.prev = newNode;
   }
 
-  insertAfterNode() {
-    // to be completed
+  insertAfterNode(payload, existingNode) {
+    console.log("insertAfterNode()");
+
+    let aNode = this.head;
+
+    while (aNode.data != existingNode.data) {
+      aNode = aNode.next;
+    }
+
+    let newNode = {};
+    newNode.data = payload;
+    newNode.prev = aNode;
+    newNode.next = aNode.next;
+    aNode.next.prev = newNode;
+    aNode.next = newNode;
   }
 
   swapNodes() {
