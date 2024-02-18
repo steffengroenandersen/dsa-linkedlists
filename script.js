@@ -35,9 +35,7 @@ function start() {
   newList.addLast(node3);
   newList.dumpList();
 
-  let payload = "H";
-  newList.insertAfterNode(payload, node2);
-
+  newList.swapNodes(node2, node3);
   newList.dumpList();
 }
 
@@ -144,8 +142,13 @@ class LinkedList {
     aNode.next = newNode;
   }
 
-  swapNodes() {
-    // to be completed
+  swapNodes(nodeA, nodeB) {
+    console.log("swapNodes()");
+    let tempNode = {};
+    tempNode.data = nodeA.data;
+
+    nodeA.data = nodeB.data;
+    nodeB.data = tempNode.data;
   }
 
   nodeAt() {
