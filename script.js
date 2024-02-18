@@ -35,7 +35,9 @@ function start() {
   newList.addLast(node3);
   newList.dumpList();
 
-  newList.removeNode(node3);
+  let payload = "H";
+  newList.insertBeforeNode(payload, node3);
+
   newList.dumpList();
 }
 
@@ -108,8 +110,22 @@ class LinkedList {
     aNode.next.prev = aNode.prev;
   }
 
-  insertBeforeNode() {
+  insertBeforeNode(payload, existingNode) {
     // to be completed
+    console.log("insertBeforeNode");
+
+    let aNode = this.head;
+
+    while (aNode.data != existingNode.data) {
+      aNode = aNode.next;
+    }
+
+    let newNode = {};
+    newNode.data = payload;
+    aNode.prev.next = newNode;
+    newNode.prev = aNode.prev;
+    newNode.next = aNode;
+    aNode.prev = newNode;
   }
 
   insertAfterNode() {
